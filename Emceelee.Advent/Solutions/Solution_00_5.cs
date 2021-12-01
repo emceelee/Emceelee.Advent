@@ -9,7 +9,7 @@ namespace Emceelee.Advent.Solutions
     {
         public void Solve()
         {
-            Console.WriteLine(Solve(1000000));
+            Console.WriteLine("Day 0.5 Solution: " + Solve(1000000));
         }
 
         public double Solve(int n, int decimals = 3)

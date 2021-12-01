@@ -7,7 +7,9 @@ namespace Emceelee.Advent
     {
         static void Main(string[] args)
         {
-            ISolution solution = new Solution_00_5();
+            ISolution solution;
+            //solution = new Solution_00_5();
+            solution = new Solution_01();
             solution.Solve();
 
             Console.ReadLine();
