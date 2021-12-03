@@ -26,7 +26,7 @@ namespace Emceelee.Advent.Tests
 
             Assert.AreEqual(2.976, result);
         }
-        
+
         [TestMethod]
         public void Solution_01_PrimesUpTo30()
         {
@@ -34,6 +34,15 @@ namespace Emceelee.Advent.Tests
 
             var result = solution.Solve(30);
             Assert.AreEqual(129, result);
+        }
+
+        [TestMethod]
+        public void Solution_03_PalindromePrimesUpTo50()
+        {
+            var solution = new Solution_03();
+
+            var result = solution.Solve(50);
+            Assert.AreEqual(28, result);
         }
     }
 }
