@@ -19,7 +19,7 @@ namespace Emceelee.Advent.Solutions
             var primeResolver = new PrimeResolver();
             var primes = primeResolver.ResolvePrimes(n);
             var palindromeResolver = new PalindromeResolver();
-            var palindromePrimes = palindromeResolver.ResolvePalindromes(primes.Cast<object>()).Cast<int>();
+            var palindromePrimes = palindromeResolver.ResolvePalindromes(primes);
 
             var sum = 0;
 

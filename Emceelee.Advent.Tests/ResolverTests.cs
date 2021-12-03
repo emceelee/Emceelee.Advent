@@ -117,7 +117,7 @@ namespace Emceelee.Advent.Tests
             var resolver = new PalindromeResolver();
             var possiblePalindromes = new List<int>() { 3, 1234, 1001, 54321, 2002 };
 
-            var result = resolver.ResolvePalindromes(possiblePalindromes.Cast<object>()).Cast<int>();
+            var result = resolver.ResolvePalindromes(possiblePalindromes);
 
             Assert.AreEqual(1, result.Count(x => x == 3));
             Assert.AreEqual(0, result.Count(x => x == 1234));

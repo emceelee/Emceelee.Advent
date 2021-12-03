@@ -7,7 +7,12 @@ namespace Emceelee.Advent.Resolvers
 {
     public class PalindromeResolver
     {
-        public IEnumerable<object> ResolvePalindromes(IEnumerable<object> possiblePalindromes)
+        public IEnumerable<T> ResolvePalindromes<T>(IEnumerable<T> possiblePalindromes)
+        {
+            return ResolvePalindromes(possiblePalindromes.Cast<object>()).Cast<T>();
+        }
+
+        private IEnumerable<object> ResolvePalindromes(IEnumerable<object> possiblePalindromes)
         {
             return possiblePalindromes.Where(x => IsPalindrome(x));
         }
