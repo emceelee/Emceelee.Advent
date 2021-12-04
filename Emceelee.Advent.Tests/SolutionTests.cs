@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 
 using Emceelee.Advent.Solutions;
 
@@ -43,6 +45,93 @@ namespace Emceelee.Advent.Tests
 
             var result = solution.Solve(50);
             Assert.AreEqual(28, result);
+        }
+
+        [TestMethod]
+        public void Solution_04_HELLO()
+        {
+            var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var instructions = new List<string>();
+            instructions.Add("goto(7);");
+            instructions.Add("read(1);");
+            instructions.Add("goto(-3);");
+            instructions.Add("read(1);");
+            instructions.Add("goto(7);");
+            instructions.Add("read(1);");
+            instructions.Add("read(1);");
+            instructions.Add("goto(3);");
+            instructions.Add("read(1);");
+
+            var solution = new Solution_04();
+
+            var result = solution.Solve(memory, instructions);
+
+            Assert.AreEqual("HELLO", result);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Solution_04_MissingParen()
+        {
+            var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var instructions = new List<string>();
+            instructions.Add("goto7");
+
+            var solution = new Solution_04();
+
+            var result = solution.Solve(memory, instructions);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Solution_04_InvalidAction()
+        {
+            var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var instructions = new List<string>();
+            instructions.Add("asdf(7)");
+
+            var solution = new Solution_04();
+
+            var result = solution.Solve(memory, instructions);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Solution_04_InvalidValue()
+        {
+            var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var instructions = new List<string>();
+            instructions.Add("goto(b)");
+
+            var solution = new Solution_04();
+
+            var result = solution.Solve(memory, instructions);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Solution_04_OutOfBounds()
+        {
+            var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var instructions = new List<string>();
+            instructions.Add("goto(-1)");
+
+            var solution = new Solution_04();
+
+            var result = solution.Solve(memory, instructions);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Solution_04_OutOfBoundsRead()
+        {
+            var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var instructions = new List<string>();
+            instructions.Add("read(27)");
+
+            var solution = new Solution_04();
+
+            var result = solution.Solve(memory, instructions);
         }
     }
 }

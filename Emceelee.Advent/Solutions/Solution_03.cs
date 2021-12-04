@@ -13,7 +13,7 @@ namespace Emceelee.Advent.Solutions
             Console.WriteLine("Day 03 Solution: " + Solve(50000));
         }
 
-        //sum primes from 1...n
+        //sum palindrome primes from 1...n
         public int Solve(int n)
         {
             var primeResolver = new PrimeResolver();
