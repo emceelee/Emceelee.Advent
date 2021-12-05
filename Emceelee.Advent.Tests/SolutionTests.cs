@@ -133,5 +133,36 @@ namespace Emceelee.Advent.Tests
 
             var result = solution.Solve(memory, instructions);
         }
+
+        [TestMethod]
+        public void Solution_05_Decryption()
+        {
+            var encrypted = "TRXMJZJONXHPSSRBX2IXRGAXOJB2VXHRMMVXE MCNOH2N";
+            var solution = new Solution_05();
+
+            var result = solution.Solve(encrypted, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789", "2ZEBRAS CDFGHIJKLMNOPQTUVWXY013456789");
+
+            Assert.AreEqual("WE ROBOTS MUGGED AN ELF TODAY MERRY CHRISTMAS", result);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Solution_05_DifferentAlphabetLengths()
+        {
+            var encrypted = "ABC";
+            var solution = new Solution_05();
+
+            var result = solution.Solve(encrypted, "ABC", "DCBA");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Solution_05_CharacterMissingInAlphabet()
+        {
+            var encrypted = "D";
+            var solution = new Solution_05();
+
+            var result = solution.Solve(encrypted, "ABC", "CBA");
+        }
     }
 }

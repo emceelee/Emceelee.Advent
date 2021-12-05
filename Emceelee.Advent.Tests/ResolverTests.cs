@@ -126,5 +126,18 @@ namespace Emceelee.Advent.Tests
             Assert.AreEqual(1, result.Count(x => x == 2002));
         }
         #endregion
+
+        #region PrimeResolver
+        [TestMethod]
+        [TestCategory("CiphertextResolver")]
+        public void CiphertextResolver_ResolveCiphertext()
+        {
+            var resolver = new CiphertextResolver();
+
+            var result = resolver.ResolveCiphertextAlphabet("2ZEBRAS");
+
+            Assert.AreEqual("2ZEBRAS CDFGHIJKLMNOPQTUVWXY013456789", result);
+        }
+        #endregion
     }
 }
