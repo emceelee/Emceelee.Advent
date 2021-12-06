@@ -139,5 +139,86 @@ namespace Emceelee.Advent.Tests
             Assert.AreEqual("2ZEBRAS CDFGHIJKLMNOPQTUVWXY013456789", result);
         }
         #endregion
+
+        #region PascalsTriangleResolver
+        [TestMethod]
+        [TestCategory("PascalsTriangleResolver")]
+        public void PascalsTriangleResolver_ResolveNextRow()
+        {
+            var resolver = new PascalsTriangleResolver();
+            var prevRow = new long[] { 1, 6, 15, 20, 15, 6, 1 }; //7 elements
+            var triangle = new List<long[]>() { prevRow };
+
+            resolver.ResolveNextRow(triangle);
+
+            var currentRow = triangle.LastOrDefault();
+
+            Assert.AreEqual(8, currentRow.Length);
+            Assert.AreEqual(1, currentRow[0]);
+            Assert.AreEqual(7, currentRow[1]);
+            Assert.AreEqual(21, currentRow[2]);
+            Assert.AreEqual(35, currentRow[3]);
+            Assert.AreEqual(35, currentRow[4]);
+            Assert.AreEqual(21, currentRow[5]);
+            Assert.AreEqual(7, currentRow[6]);
+            Assert.AreEqual(1, currentRow[7]);
+        }
+
+        [TestMethod]
+        [TestCategory("PascalsTriangleResolver")]
+        public void PascalsTriangleResolver_ResolveNextRow_EmptyTriangle()
+        {
+            var resolver = new PascalsTriangleResolver();
+            var triangle = new List<long[]>();
+
+            resolver.ResolveNextRow(triangle);
+
+            var currentRow = triangle.LastOrDefault();
+
+            Assert.AreEqual(1, currentRow.Length);
+            Assert.AreEqual(1, currentRow[0]);
+        }
+
+        [TestMethod]
+        [TestCategory("PascalsTriangleResolver")]
+        public void PascalsTriangleResolver_ResolveNextRow_EmptyLastRow()
+        {
+            var resolver = new PascalsTriangleResolver();
+            var prevRow = new long[0]; //7 elements
+            var triangle = new List<long[]>() { prevRow };
+
+            resolver.ResolveNextRow(triangle);
+
+            var currentRow = triangle.LastOrDefault();
+
+            Assert.AreEqual(1, currentRow.Length);
+            Assert.AreEqual(1, currentRow[0]);
+        }
+
+        [TestMethod]
+        [TestCategory("PascalsTriangleResolver")]
+        public void PascalsTriangleResolver_ResolveNextRow_NullLastRow()
+        {
+            var resolver = new PascalsTriangleResolver();
+            var triangle = new List<long[]>() { null };
+
+            resolver.ResolveNextRow(triangle);
+
+            var currentRow = triangle.LastOrDefault();
+
+            Assert.AreEqual(1, currentRow.Length);
+            Assert.AreEqual(1, currentRow[0]);
+        }
+
+        [TestMethod]
+        [TestCategory("PascalsTriangleResolver")]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void PascalsTriangleResolver_ResolveNextRow_NullInput()
+        {
+            var resolver = new PascalsTriangleResolver();
+
+            resolver.ResolveNextRow(null);
+        }
+        #endregion
     }
 }
