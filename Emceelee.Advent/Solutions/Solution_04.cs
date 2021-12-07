@@ -17,8 +17,8 @@ namespace Emceelee.Advent.Solutions
 
         public void Solve()
         {
-            var memory = ReadAllText("03_memory.txt");
-            var instructions = ReadLines("03_program.txt");
+            var memory = Utility.ReadAllText("DataSet\\03_memory.txt");
+            var instructions = Utility.ReadLines("DataSet\\03_program.txt");
 
             Console.WriteLine("Day 04 Solution: " + Solve(memory, instructions));
         }
@@ -96,22 +96,6 @@ namespace Emceelee.Advent.Solutions
             {
                 throw new ArgumentException($"Can't parse value {valueToParse}.  ");
             }
-        }
-
-        private IEnumerable<string> ReadLines(string file)
-        {
-            string path = Directory.GetCurrentDirectory();
-            string filePath = $"{path}\\DataSet\\{file}";
-
-            return File.ReadLines(filePath);
-        }
-
-        private string ReadAllText(string file)
-        {
-            string path = Directory.GetCurrentDirectory();
-            string filePath = $"{path}\\DataSet\\{file}";
-
-            return File.ReadAllText(filePath);
         }
     }
 }

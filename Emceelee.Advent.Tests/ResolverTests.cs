@@ -220,5 +220,30 @@ namespace Emceelee.Advent.Tests
             resolver.ResolveNextRow(null);
         }
         #endregion
+
+        #region SetCountResolver
+        [TestMethod]
+        [TestCategory("SetCountResolver")]
+        public void SetCountResolver_ResolveSetCounts_ExampleTriplets()
+        {
+            string text = Utility.ReadAllText("Examples\\07_example.txt");
+            var resolver = new SetCountResolver();
+
+            var result = resolver.ResolveSetCounts(text, 3);
+
+            Assert.AreEqual(4, result);
+        }
+
+        [TestMethod]
+        [TestCategory("SetCountResolver")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void SetCountResolver_ResolveSetCounts_ArgumentOutOfRangeException()
+        {
+            string text = Utility.ReadAllText("Examples\\07_example.txt");
+            var resolver = new SetCountResolver();
+
+            var result = resolver.ResolveSetCounts(text, 0);
+        }
+        #endregion
     }
 }
