@@ -127,7 +127,7 @@ namespace Emceelee.Advent.Tests
         }
         #endregion
 
-        #region PrimeResolver
+        #region CiphertextResolver
         [TestMethod]
         [TestCategory("CiphertextResolver")]
         public void CiphertextResolver_ResolveCiphertext()
@@ -243,6 +243,75 @@ namespace Emceelee.Advent.Tests
             var resolver = new SetCountResolver();
 
             var result = resolver.ResolveSetCounts(text, 0);
+        }
+        #endregion
+
+        #region CollisionResolver
+        [TestMethod]
+        [TestCategory("CollisionResolver")]
+        public void CollisionResolver_ResolveCollisions_Example()
+        {
+            var lines = Utility.ReadLines("Examples\\08_example.txt");
+            var resolver = new CollisionResolver();
+
+            var result = resolver.ResolveCollisions(lines, 3, 1);
+
+            Assert.AreEqual(4, result);
+        }
+
+        [TestMethod]
+        [TestCategory("CollisionResolver")]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void CollisionResolver_ResolveCollisions_NullLines()
+        {
+            List<string> lines = null;
+            var resolver = new CollisionResolver();
+
+            var result = resolver.ResolveCollisions(lines, 3, 1);
+        }
+
+        [TestMethod]
+        [TestCategory("CollisionResolver")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CollisionResolver_ResolveCollisions_ZeroLines()
+        {
+            var lines = Enumerable.Empty<string>();
+            var resolver = new CollisionResolver();
+
+            var result = resolver.ResolveCollisions(lines, 3, 1);
+        }
+
+        [TestMethod]
+        [TestCategory("CollisionResolver")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CollisionResolver_ResolveCollisions_InvalidRight()
+        {
+            var lines = new List<string>() { ".#" };
+            var resolver = new CollisionResolver();
+
+            var result = resolver.ResolveCollisions(lines, -1, 1);
+        }
+
+        [TestMethod]
+        [TestCategory("CollisionResolver")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CollisionResolver_ResolveCollisions_InvalidDown()
+        {
+            var lines = new List<string>() { ".#" };
+            var resolver = new CollisionResolver();
+
+            var result = resolver.ResolveCollisions(lines, 1, 0);
+        }
+
+        [TestMethod]
+        [TestCategory("CollisionResolver")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CollisionResolver_ResolveCollisions_InvalidLineLengths()
+        {
+            var lines = new List<string>() { ".#", ".#." };
+            var resolver = new CollisionResolver();
+
+            var result = resolver.ResolveCollisions(lines, 1, 1);
         }
         #endregion
     }

@@ -14,7 +14,8 @@ namespace Emceelee.Advent
             //solution = new Solution_04();
             //solution = new Solution_05();
             //solution = new Solution_06();
-            solution = new Solution_07();
+            //solution = new Solution_07();
+            solution = new Solution_08();
             solution.Solve();
 
             Console.ReadLine();
