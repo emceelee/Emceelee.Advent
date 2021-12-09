@@ -188,5 +188,17 @@ namespace Emceelee.Advent.Tests
 
             Assert.AreEqual(35, result);
         }
+
+        [TestMethod]
+        [TestCategory("Solution_09")]
+        public void Solution_09_wow()
+        {
+            var text = "408 329 759 49 973 975 969 343 270 127 103";
+            var solution = new Solution_09();
+
+            var result = solution.Solve(text);
+
+            Assert.AreEqual("wow", result);
+        }
     }
 }

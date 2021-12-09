@@ -314,5 +314,66 @@ namespace Emceelee.Advent.Tests
             var result = resolver.ResolveCollisions(lines, 1, 1);
         }
         #endregion
+
+
+        #region SquaresResolver
+        [TestMethod]
+        [TestCategory("SquaresResolver")]
+        public void SquaresResolver_ResolveSquares_100()
+        {
+            var resolver = new SquaresResolver();
+
+            var result = resolver.ResolveSquares(100);
+
+            Assert.IsTrue(result.Contains(0));
+            Assert.IsTrue(result.Contains(1));
+            Assert.IsTrue(result.Contains(4));
+            Assert.IsTrue(result.Contains(9));
+            Assert.IsTrue(result.Contains(16));
+            Assert.IsTrue(result.Contains(25));
+            Assert.IsTrue(result.Contains(36));
+            Assert.IsTrue(result.Contains(49));
+            Assert.IsTrue(result.Contains(64));
+            Assert.IsTrue(result.Contains(81));
+            Assert.IsTrue(result.Contains(100));
+        }
+
+        [TestMethod]
+        [TestCategory("SquaresResolver")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void SquaresResolver_ResolveSquares_Exception()
+        {
+            var resolver = new SquaresResolver();
+
+            var result = resolver.ResolveSquares(-1);
+        }
+        #endregion
+
+        #region CubesResolver
+        [TestMethod]
+        [TestCategory("CubesResolver")]
+        public void CubesResolver_ResolveCubes_100()
+        {
+            var resolver = new CubesResolver();
+
+            var result = resolver.ResolveCubes(100);
+
+            Assert.IsTrue(result.Contains(0));
+            Assert.IsTrue(result.Contains(1));
+            Assert.IsTrue(result.Contains(8));
+            Assert.IsTrue(result.Contains(27));
+            Assert.IsTrue(result.Contains(64));
+        }
+
+        [TestMethod]
+        [TestCategory("CubesResolver")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CubesResolver_ResolveCubes_Exception()
+        {
+            var resolver = new CubesResolver();
+
+            var result = resolver.ResolveCubes(-1);
+        }
+        #endregion
     }
 }
