@@ -222,6 +222,7 @@ namespace Emceelee.Advent.Tests
         #endregion
 
         #region SetCountResolver
+        /*
         [TestMethod]
         [TestCategory("SetCountResolver")]
         public void SetCountResolver_ResolveSetCounts_ExampleTriplets()
@@ -233,20 +234,21 @@ namespace Emceelee.Advent.Tests
 
             Assert.AreEqual(4, result);
         }
+        */
 
         [TestMethod]
         [TestCategory("SetCountResolver")]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void SetCountResolver_ResolveSetCounts_ArgumentOutOfRangeException()
         {
-            string text = Utility.ReadAllText("Examples\\07_example.txt");
             var resolver = new SetCountResolver();
 
-            var result = resolver.ResolveSetCounts(text, 0);
+            var result = resolver.ResolveSetCounts("text", 0);
         }
         #endregion
 
         #region CollisionResolver
+        /*
         [TestMethod]
         [TestCategory("CollisionResolver")]
         public void CollisionResolver_ResolveCollisions_Example()
@@ -258,6 +260,7 @@ namespace Emceelee.Advent.Tests
 
             Assert.AreEqual(4, result);
         }
+        */
 
         [TestMethod]
         [TestCategory("CollisionResolver")]
@@ -373,6 +376,146 @@ namespace Emceelee.Advent.Tests
             var resolver = new CubesResolver();
 
             var result = resolver.ResolveCubes(-1);
+        }
+        #endregion
+
+        #region TrolleyPathNodeTreeResolver
+        [TestMethod]
+        [TestCategory("TrolleyPathNodeTreeResolver")]
+        public void TrolleyPath_Value()
+        {
+            var path = new TrolleyPath("start", "end", "EEES....");
+
+            Assert.AreEqual(10, path.Value);
+        }
+
+        [TestMethod]
+        [TestCategory("TrolleyPathNodeTreeResolver")]
+        public void TrolleyPath_NullObstacles()
+        {
+            var path = new TrolleyPath("start", "end");
+
+            Assert.AreEqual(0, path.Value);
+        }
+
+        [TestMethod]
+        [TestCategory("TrolleyPathNodeTreeResolver")]
+        public void TrolleyPathNode_Constructor()
+        {
+            var parentPath = new TrolleyPath("start", "start");
+            var rootNode = new TrolleyPathNode(null, parentPath);
+
+            Assert.IsNull(rootNode.Parent);
+            Assert.AreEqual(parentPath.End, rootNode.NodeName);
+            Assert.AreEqual(parentPath.Value, rootNode.NodeValue);
+            Assert.AreEqual(parentPath.Value, rootNode.PathToNodeValue);
+
+            var path1 = new TrolleyPath("start", "mid", "S"); //value 1
+            var midNode = new TrolleyPathNode(rootNode, path1);
+
+            Assert.AreSame(rootNode, midNode.Parent);
+            Assert.AreEqual(path1.End, midNode.NodeName);
+            Assert.AreEqual(path1.Value, midNode.NodeValue);
+            Assert.AreEqual(path1.Value, midNode.PathToNodeValue);
+
+            var path2 = new TrolleyPath("mid", "end", "E"); //value 3
+            var endNode = new TrolleyPathNode(midNode, path2);
+
+            Assert.AreSame(midNode, endNode.Parent);
+            Assert.AreEqual(path2.End, endNode.NodeName);
+            Assert.AreEqual(path2.Value, endNode.NodeValue);
+            Assert.AreEqual(path1.Value + path2.Value, endNode.PathToNodeValue);
+        }
+
+        [TestMethod]
+        [TestCategory("TrolleyPathNodeTreeResolver")]
+        public void TrolleyPathNodeTreeResolver_ResolveTrolleyPathNodeTree()
+        {
+            var path1 = new TrolleyPath("start", "mid", "S"); //value 1
+            var path2 = new TrolleyPath("mid", "end", "E"); //value 3
+            var paths = new List<TrolleyPath>() { path1, path2 };
+
+            var resolver = new TrolleyPathNodeTreeResolver();
+
+            var rootNode = resolver.ResolveTrolleyPathNodeTree(paths);
+            var midNode = rootNode["mid"];
+            var endNode = midNode["end"];
+
+            Assert.IsNull(rootNode.Parent);
+            Assert.AreEqual("start", rootNode.NodeName);
+            Assert.AreEqual(0, rootNode.NodeValue);
+            Assert.AreEqual(0, rootNode.PathToNodeValue);
+
+            Assert.AreSame(rootNode, midNode.Parent);
+            Assert.AreEqual(path1.End, midNode.NodeName);
+            Assert.AreEqual(path1.Value, midNode.NodeValue);
+            Assert.AreEqual(path1.Value, midNode.PathToNodeValue);
+
+            Assert.AreSame(midNode, endNode.Parent);
+            Assert.AreEqual(path2.End, endNode.NodeName);
+            Assert.AreEqual(path2.Value, endNode.NodeValue);
+            Assert.AreEqual(path1.Value + path2.Value, endNode.PathToNodeValue);
+        }
+
+        [TestMethod]
+        [TestCategory("TrolleyPathNodeTreeResolver")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TrolleyPathNodeTreeResolver_NoRootNode()
+        {
+            //circular paths
+            var path1 = new TrolleyPath("start", "end", "S");
+            var path2 = new TrolleyPath("end", "start", "E");
+            var paths = new List<TrolleyPath>() { path1, path2 };
+
+            var resolver = new TrolleyPathNodeTreeResolver();
+
+            var rootNode = resolver.ResolveTrolleyPathNodeTree(paths);
+        }
+
+        [TestMethod]
+        [TestCategory("TrolleyPathNodeTreeResolver")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TrolleyPathNodeTreeResolver_MultipleRootNode()
+        {
+            //two starts
+            var path1 = new TrolleyPath("start1", "end1", "S");
+            var path2 = new TrolleyPath("start2", "end2", "S");
+            var paths = new List<TrolleyPath>() { path1, path2 };
+
+            var resolver = new TrolleyPathNodeTreeResolver();
+
+            var rootNode = resolver.ResolveTrolleyPathNodeTree(paths);
+        }
+
+        [TestMethod]
+        [TestCategory("TrolleyPathNodeTreeResolver")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TrolleyPathNodeTreeResolver_RemainingPaths()
+        {
+            //remaining path same as multiple starts
+            var path1 = new TrolleyPath("start", "mid", "S");
+            var path2 = new TrolleyPath("mid", "end", "E");
+            var path3 = new TrolleyPath("nowhere1", "nowhere2", "S"); //remaining path should be caught by multiple root nodes
+            var paths = new List<TrolleyPath>() { path1, path2, path3 };
+
+            var resolver = new TrolleyPathNodeTreeResolver();
+
+            var rootNode = resolver.ResolveTrolleyPathNodeTree(paths);
+        }
+
+        [TestMethod]
+        [TestCategory("TrolleyPathNodeTreeResolver")]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void TrolleyPathNodeTreeResolver_DuplicatePath()
+        {
+            var path1 = new TrolleyPath("start", "mid", "S");
+            var path2a = new TrolleyPath("mid", "end", "E");
+            var path2b = new TrolleyPath("mid", "end", "E"); //duplicate of path2a
+            var paths = new List<TrolleyPath>() { path1, path2a, path2b };
+
+            var resolver = new TrolleyPathNodeTreeResolver();
+
+            var rootNode = resolver.ResolveTrolleyPathNodeTree(paths);
         }
         #endregion
     }

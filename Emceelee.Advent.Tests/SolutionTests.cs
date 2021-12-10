@@ -200,5 +200,29 @@ namespace Emceelee.Advent.Tests
 
             Assert.AreEqual("wow", result);
         }
+
+        [TestMethod]
+        [TestCategory("Solution_10")]
+        public void Solution_10_example()
+        {
+            var lines = new List<string>()
+            {
+                "A,AA,..........",
+                "AA,AAA,.SE..E....",
+                "AAA,AAAA,EEE.ES...S",
+                "AAA,AAAB,EE..E..E..",
+                "A,AB,.......S..",
+                "AB,ABA,.......EEE",
+                "ABA,ABAA,E.SS..S...",
+                "ABA,ABAB,E...E.S.EE",
+                "AB,ABB,....E.E...",
+                "ABB,ABBA,.EEEE....E"
+            };
+            var solution = new Solution_10();
+
+            var result = solution.Solve(lines);
+
+            Assert.AreEqual(16, result);
+        }
     }
 }

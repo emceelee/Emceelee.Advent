@@ -1,7 +1,8 @@
-﻿using Emceelee.Advent.Resolvers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+
+using Emceelee.Advent.Resolvers;
 
 namespace Emceelee.Advent.Solutions
 {
