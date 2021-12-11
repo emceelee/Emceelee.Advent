@@ -224,5 +224,16 @@ namespace Emceelee.Advent.Tests
 
             Assert.AreEqual(16, result);
         }
+
+        [TestMethod]
+        [TestCategory("Solution_11")]
+        public void Solution_11_First10()
+        {
+            var solution = new Solution_11();
+
+            var result = solution.Solve(40);
+
+            Assert.AreEqual("1,2,1,2,1,2,1", result);
+        }
     }
 }
