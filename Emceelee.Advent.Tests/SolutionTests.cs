@@ -235,5 +235,24 @@ namespace Emceelee.Advent.Tests
 
             Assert.AreEqual("1,2,1,2,1,2,1", result);
         }
+
+        [TestMethod]
+        [TestCategory("Solution_12")]
+        public void Solution_12_TedJones98()
+        {
+            var solution = new Solution_12();
+
+            var names = new string[98];
+            for(int i = 0; i < names.Length; ++i)
+            {
+                names[i] = " ";
+            }
+            names[97] = "Ted Jones";
+
+
+            var result = solution.Solve(names);
+
+            Assert.AreEqual(59192, result);
+        }
     }
 }
