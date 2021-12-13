@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Emceelee.Advent.Solutions;
 
@@ -253,6 +254,20 @@ namespace Emceelee.Advent.Tests
             var result = solution.Solve(names);
 
             Assert.AreEqual(59192, result);
+        }
+
+        [TestMethod]
+        [TestCategory("Solution_13")]
+        public void Solution_13_Blitzen()
+        {
+            var solution = new Solution_13();
+
+            var garbledText = "3Bli[wtz!.9;en";
+            var errorSequence = "3,3,7,7,0,10,9".Split(',').Select(num => int.Parse(num));
+            
+            var result = solution.Solve(garbledText, errorSequence);
+
+            Assert.AreEqual("Blitzen", result);
         }
     }
 }
