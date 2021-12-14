@@ -518,5 +518,35 @@ namespace Emceelee.Advent.Tests
             var rootNode = resolver.ResolveTrolleyPathNodeTree(paths);
         }
         #endregion
+
+        #region FiboResolver
+
+        [TestMethod]
+        [TestCategory("FiboResolver")]
+        public void FiboResolver_ResolveFibo()
+        {
+            var resolver = new FiboResolver();
+
+            var result = resolver.ResolveFibo(5);
+
+            Assert.AreEqual(3, result);
+
+            result = resolver.ResolveFibo(20);
+
+            Assert.AreEqual(4181, result);
+        }
+
+        [TestMethod]
+        [TestCategory("FiboResolver")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void FiboResolver_Zero()
+        {
+            var resolver = new FiboResolver();
+
+            var result = resolver.ResolveFibo(0);
+        }
+        #endregion
+
+
     }
 }
