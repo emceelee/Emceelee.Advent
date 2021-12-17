@@ -264,10 +264,31 @@ namespace Emceelee.Advent.Tests
 
             var garbledText = "3Bli[wtz!.9;en";
             var errorSequence = "3,3,7,7,0,10,9".Split(',').Select(num => int.Parse(num));
-            
+
             var result = solution.Solve(garbledText, errorSequence);
 
             Assert.AreEqual("Blitzen", result);
+        }
+
+        [TestMethod]
+        [TestCategory("Solution_17")]
+        public void Solution_17_3Digits()
+        {
+            var solution = new Solution_17();
+
+            var result = solution.Solve(3);
+
+            Assert.AreEqual("14455678767661239941060750283349851372786616456634781515481577509301997444983826731071749118079998628070030493", result);
+        }
+
+        [TestMethod]
+        [TestCategory("Solution_17")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Solution_17_ArgumentOutOfRangeException()
+        {
+            var solution = new Solution_17();
+
+            var result = solution.Solve(0);
         }
     }
 }
