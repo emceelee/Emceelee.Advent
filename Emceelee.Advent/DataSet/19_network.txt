@@ -1,0 +1,62 @@
+McMurdo-Wellington: 81
+McMurdo-Ushuaia: 84
+Wellington-Sydney: 14
+Sydney-Darwin: 7
+Darwin-Singapore: 101
+Sydney-Singapore: 81
+Wellington-Honolulu: 136
+Singapore-Mumbai: 49
+Singapore-Bangkok: 25
+Singapore-Manila: 37
+Bangkok-Manila: 39
+Bangkok-Mumbai: 40
+Bangkok-Taipei: 43
+Manila-Taipei: 30
+Taipei-Tokyo: 21
+Honolulu-Tokyo: 43
+Honolulu-Los Angeles: 70
+Honolulu-Juneau: 80
+Taipei-Vladivostok: 61
+Tokyo-Vladivostok: 21
+Vladivostok-Moscow: 64
+Mumbai-Riyadh: 38
+Mumbai-Moscow: 84
+Riyadh-Cairo: 31
+Cairo-Berlin: 45
+Cairo-Addis Ababa: 50
+Cairo-Algiers: 49
+Algiers-Barcelona: 9
+Berlin-Moscow: 10
+Berlin-Barcelona: 10
+Barcelona-London: 13
+Berlin-Stavanger: 14
+London-Stavanger: 20
+Moscow-Stavanger: 41
+Stavanger-Longyearbyen: 31
+Longyearbyen-North Pole: 14
+Ushuaia-Santiago: 54
+Ushuaia-Buenos Aires: 28
+Santiago-Buenos Aires: 22
+Santiago-Lima: 41
+Lima-Panama City: 40
+Buenos Aires-Panama City: 143
+Panama City-Mexico City: 40
+Mexico City-Los Angeles: 41
+Mexico City-Houston: 35
+Houston-Calgary: 19
+Houston-New York: 15
+New York-Montreal: 2
+New York-London: 90
+Montreal-Iqaluit: 33
+Los Angeles-Calgary: 24
+Montreal-Calgary: 42
+Calgary-Yellowknife: 24
+Los Angeles-Vancouver: 31
+Vancouver-Calgary: 5
+Vancouver-Juneau: 14
+Juneau-Yellowknife: 22
+Yellowknife-Iqaluit: 26
+Yellowknife-Alert: 40
+Iqaluit-Alert: 12
+Iqaluit-North Pole: 24
+Alert-North Pole: 7

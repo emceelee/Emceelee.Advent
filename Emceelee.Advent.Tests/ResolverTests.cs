@@ -547,6 +547,26 @@ namespace Emceelee.Advent.Tests
         }
         #endregion
 
+        #region NodeNetworkResolver
+        [TestMethod]
+        [TestCategory("NodeNetworkResolver")]
+        public void NodeNetworkResolver_ResolveMinimumPathValue_Example()
+        {
+            var resolver = new NodeNetworkResolver();
+            resolver.AddNode("NARNIA");
+            resolver.AddNode("CALGARY");
+            resolver.AddNode("DENVER");
+            resolver.AddNode("HOUSTON");
+            resolver.AddPath("NARNIA", "CALGARY", 31);
+            resolver.AddPath("CALGARY", "DENVER", 27);
+            resolver.AddPath("DENVER", "HOUSTON", 23);
+            resolver.AddPath("CALGARY", "HOUSTON", 50);
 
+            resolver.CacheMinPathValues("HOUSTON");
+            var result = resolver.ResolveMinimumPathValue("NARNIA", "HOUSTON", out IEnumerable<NetworkPath> minValuePath);
+
+            Assert.AreEqual(81, result.Value);
+        }
+        #endregion
     }
 }
