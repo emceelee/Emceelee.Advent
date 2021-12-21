@@ -568,5 +568,23 @@ namespace Emceelee.Advent.Tests
             Assert.AreEqual(81, result.Value);
         }
         #endregion
+
+        #region PermutationResolver
+        [TestMethod]
+        [TestCategory("PermutationResolver")]
+        public void PermutationResolver_ResolvePermutations_Example()
+        {
+            var resolver = new PermutationResolver();
+            var result = resolver.ResolvePermutations("01234").ToList();
+
+            Assert.AreEqual(120, result.Count);
+            Assert.AreEqual("01234", result[0]);
+            Assert.AreEqual("01243", result[1]);
+            Assert.AreEqual("01324", result[2]);
+            Assert.AreEqual("01342", result[3]);
+            Assert.AreEqual("01423", result[4]);
+
+        }
+        #endregion
     }
 }
