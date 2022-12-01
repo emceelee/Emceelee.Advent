@@ -14,7 +14,7 @@ namespace Emceelee.Advent.Tests
         [TestCategory("Solution_00_5")]
         public void Solution_00_5_Iteration1()
         {
-            var solution = new Solution_00_5();
+            var solution = new Solution21_00_5();
 
             var result = solution.Solve(1);
 
@@ -25,7 +25,7 @@ namespace Emceelee.Advent.Tests
         [TestCategory("Solution_00_5")]
         public void Solution_00_5_Iteration10()
         {
-            var solution = new Solution_00_5();
+            var solution = new Solution21_00_5();
 
             var result = solution.Solve(5);
 
@@ -36,7 +36,7 @@ namespace Emceelee.Advent.Tests
         [TestCategory("Solution_01")]
         public void Solution_01_PrimesUpTo30()
         {
-            var solution = new Solution_01();
+            var solution = new Solution21_01();
 
             var result = solution.Solve(30);
             Assert.AreEqual(129, result);
@@ -46,7 +46,7 @@ namespace Emceelee.Advent.Tests
         [TestCategory("Solution_03")]
         public void Solution_03_PalindromePrimesUpTo50()
         {
-            var solution = new Solution_03();
+            var solution = new Solution21_03();
 
             var result = solution.Solve(50);
             Assert.AreEqual(28, result);
@@ -68,7 +68,7 @@ namespace Emceelee.Advent.Tests
             instructions.Add("goto(3);");
             instructions.Add("read(1);");
 
-            var solution = new Solution_04();
+            var solution = new Solution21_04();
 
             var result = solution.Solve(memory, instructions);
 
@@ -84,7 +84,7 @@ namespace Emceelee.Advent.Tests
             var instructions = new List<string>();
             instructions.Add("goto7");
 
-            var solution = new Solution_04();
+            var solution = new Solution21_04();
 
             var result = solution.Solve(memory, instructions);
         }
@@ -98,7 +98,7 @@ namespace Emceelee.Advent.Tests
             var instructions = new List<string>();
             instructions.Add("asdf(7)");
 
-            var solution = new Solution_04();
+            var solution = new Solution21_04();
 
             var result = solution.Solve(memory, instructions);
         }
@@ -112,7 +112,7 @@ namespace Emceelee.Advent.Tests
             var instructions = new List<string>();
             instructions.Add("goto(b)");
 
-            var solution = new Solution_04();
+            var solution = new Solution21_04();
 
             var result = solution.Solve(memory, instructions);
         }
@@ -126,7 +126,7 @@ namespace Emceelee.Advent.Tests
             var instructions = new List<string>();
             instructions.Add("goto(-1)");
 
-            var solution = new Solution_04();
+            var solution = new Solution21_04();
 
             var result = solution.Solve(memory, instructions);
         }
@@ -140,7 +140,7 @@ namespace Emceelee.Advent.Tests
             var instructions = new List<string>();
             instructions.Add("read(27)");
 
-            var solution = new Solution_04();
+            var solution = new Solution21_04();
 
             var result = solution.Solve(memory, instructions);
         }
@@ -150,7 +150,7 @@ namespace Emceelee.Advent.Tests
         public void Solution_05_Decryption()
         {
             var encrypted = "TRXMJZJONXHPSSRBX2IXRGAXOJB2VXHRMMVXE MCNOH2N";
-            var solution = new Solution_05();
+            var solution = new Solution21_05();
 
             var result = solution.Solve(encrypted, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789", "2ZEBRAS CDFGHIJKLMNOPQTUVWXY013456789");
 
@@ -163,7 +163,7 @@ namespace Emceelee.Advent.Tests
         public void Solution_05_DifferentAlphabetLengths()
         {
             var encrypted = "ABC";
-            var solution = new Solution_05();
+            var solution = new Solution21_05();
 
             var result = solution.Solve(encrypted, "ABC", "DCBA");
         }
@@ -174,7 +174,7 @@ namespace Emceelee.Advent.Tests
         public void Solution_05_CharacterMissingInAlphabet()
         {
             var encrypted = "D";
-            var solution = new Solution_05();
+            var solution = new Solution21_05();
 
             var result = solution.Solve(encrypted, "ABC", "CBA");
         }
@@ -183,7 +183,7 @@ namespace Emceelee.Advent.Tests
         [TestCategory("Solution_06")]
         public void Solution_06_Over30()
         {
-            var solution = new Solution_06();
+            var solution = new Solution21_06();
 
             var result = solution.Solve(30);
 
@@ -195,7 +195,7 @@ namespace Emceelee.Advent.Tests
         public void Solution_09_wow()
         {
             var text = "408 329 759 49 973 975 969 343 270 127 103";
-            var solution = new Solution_09();
+            var solution = new Solution21_09();
 
             var result = solution.Solve(text);
 
@@ -219,7 +219,7 @@ namespace Emceelee.Advent.Tests
                 "AB,ABB,....E.E...",
                 "ABB,ABBA,.EEEE....E"
             };
-            var solution = new Solution_10();
+            var solution = new Solution21_10();
 
             var result = solution.Solve(lines);
 
@@ -230,7 +230,7 @@ namespace Emceelee.Advent.Tests
         [TestCategory("Solution_11")]
         public void Solution_11_First10()
         {
-            var solution = new Solution_11();
+            var solution = new Solution21_11();
 
             var result = solution.Solve(40);
 
@@ -241,7 +241,7 @@ namespace Emceelee.Advent.Tests
         [TestCategory("Solution_12")]
         public void Solution_12_TedJones98()
         {
-            var solution = new Solution_12();
+            var solution = new Solution21_12();
 
             var names = new string[98];
             for(int i = 0; i < names.Length; ++i)
@@ -260,7 +260,7 @@ namespace Emceelee.Advent.Tests
         [TestCategory("Solution_13")]
         public void Solution_13_Blitzen()
         {
-            var solution = new Solution_13();
+            var solution = new Solution21_13();
 
             var garbledText = "3Bli[wtz!.9;en";
             var errorSequence = "3,3,7,7,0,10,9".Split(',').Select(num => int.Parse(num));
@@ -274,7 +274,7 @@ namespace Emceelee.Advent.Tests
         [TestCategory("Solution_17")]
         public void Solution_17_3Digits()
         {
-            var solution = new Solution_17();
+            var solution = new Solution21_17();
 
             var result = solution.Solve(3);
 
@@ -286,7 +286,7 @@ namespace Emceelee.Advent.Tests
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Solution_17_ArgumentOutOfRangeException()
         {
-            var solution = new Solution_17();
+            var solution = new Solution21_17();
 
             var result = solution.Solve(0);
         }

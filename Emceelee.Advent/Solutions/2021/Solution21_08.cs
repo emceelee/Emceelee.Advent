@@ -7,7 +7,7 @@ using Emceelee.Advent.Resolvers;
 
 namespace Emceelee.Advent.Solutions
 {
-    public class Solution_08 : ISolution
+    public class Solution21_08 : ISolution
     {
         public void Solve()
         {

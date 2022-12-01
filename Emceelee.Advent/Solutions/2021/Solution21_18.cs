@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Emceelee.Advent.Solutions
 {
-    public class Solution_18 : ISolution
+    public class Solution21_18 : ISolution
     {
         string[] RawBaseLetters = new string[6]
         {

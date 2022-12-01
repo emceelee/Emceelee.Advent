@@ -8,25 +8,31 @@ namespace Emceelee.Advent
         static void Main(string[] args)
         {
             ISolution solution;
-            //solution = new Solution_00_5();
-            //solution = new Solution_01();
-            //solution = new Solution_03();
-            //solution = new Solution_04();
-            //solution = new Solution_05();
-            //solution = new Solution_06();
-            //solution = new Solution_07();
-            //solution = new Solution_08();
-            //solution = new Solution_09();
-            //solution = new Solution_10();
-            //solution = new Solution_11();
-            //solution = new Solution_12();
-            //solution = new Solution_13();
-            //solution = new Solution_14();
-            //solution = new Solution_15();
-            //solution = new Solution_17();
-            //solution = new Solution_18();
-            //solution = new Solution_19();
-            solution = new Solution_21();
+            #region 2021
+            //solution = new Solution21_00_5();
+            //solution = new Solution21_01();
+            //solution = new Solution21_03();
+            //solution = new Solution21_04();
+            //solution = new Solution21_05();
+            //solution = new Solution21_06();
+            //solution = new Solution21_07();
+            //solution = new Solution21_08();
+            //solution = new Solution21_09();
+            //solution = new Solution21_10();
+            //solution = new Solution21_11();
+            //solution = new Solution21_12();
+            //solution = new Solution21_13();
+            //solution = new Solution21_14();
+            //solution = new Solution21_15();
+            //solution = new Solution21_17();
+            //solution = new Solution21_18();
+            //solution = new Solution21_19();
+            //solution = new Solution21_21();
+            #endregion
+
+            #region 2022
+            solution = new Solution22_01();
+            #endregion
             solution.Solve();
 
             Console.ReadLine();

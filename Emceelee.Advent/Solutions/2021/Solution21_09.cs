@@ -7,12 +7,12 @@ using Emceelee.Advent.Resolvers;
 
 namespace Emceelee.Advent.Solutions
 {
-    public class Solution_09 : ISolution
+    public class Solution21_09 : ISolution
     {
         private HashSet<int> Squares { get; }
         private HashSet<int> Cubes { get; }
 
-        public Solution_09()
+        public Solution21_09()
         {
             var squaresResolver = new SquaresResolver();
             var cubesResolver = new CubesResolver();

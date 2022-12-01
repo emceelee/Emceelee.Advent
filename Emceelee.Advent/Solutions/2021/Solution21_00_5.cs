@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Emceelee.Advent.Solutions
 {
-    public class Solution_00_5 : ISolution
+    public class Solution21_00_5 : ISolution
     {
         public void Solve()
         {

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Emceelee.Advent.Solutions
 {
-    public class Solution_04 : ISolution
+    public class Solution21_04 : ISolution
     {
         private enum enAction
         {

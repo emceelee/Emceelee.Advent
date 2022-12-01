@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Emceelee.Advent.Solutions
 {
-    public class Solution_15 : ISolution
+    public class Solution21_15 : ISolution
     {
         public void Solve()
         {
