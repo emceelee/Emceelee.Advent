@@ -18,5 +18,15 @@ namespace Emceelee.Advent.Tests
 
             Assert.AreEqual(15, result);
         }
+
+        [TestMethod]
+        [TestCategory("Solution22_02")]
+        public void Solution22_02_20()
+        {
+            var solution = new Solution22_02();
+            var result = solution.Solve(20);
+
+            Assert.AreEqual(18, result);
+        }
     }
 }

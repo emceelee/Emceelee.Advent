@@ -610,5 +610,30 @@ namespace Emceelee.Advent.Tests
             Assert.IsTrue(result.Contains(5));
         }
         #endregion
+
+        #region EvensResolver
+        [TestMethod]
+        [TestCategory("EvensResolver")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void EvensResolver_ResolveEvens_ArgumentOutOfRange()
+        {
+            var resolver = new EvensResolver();
+            resolver.ResolveEvens(0);
+        }
+
+        [TestMethod]
+        [TestCategory("OddsResolver")]
+        public void EvensResolver_ResolveEvens_Evens()
+        {
+            var resolver = new EvensResolver();
+            var result = resolver.ResolveEvens(5);
+
+            Assert.IsTrue(!result.Contains(1));
+            Assert.IsTrue(result.Contains(2));
+            Assert.IsTrue(!result.Contains(3));
+            Assert.IsTrue(result.Contains(4));
+            Assert.IsTrue(!result.Contains(5));
+        }
+        #endregion
     }
 }

@@ -31,7 +31,8 @@ namespace Emceelee.Advent
             #endregion
 
             #region 2022
-            solution = new Solution22_01();
+            //solution = new Solution22_01();
+            solution = new Solution22_02();
             #endregion
             solution.Solve();
 
