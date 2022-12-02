@@ -317,8 +317,7 @@ namespace Emceelee.Advent.Tests
             var result = resolver.ResolveCollisions(lines, 1, 1);
         }
         #endregion
-
-
+        
         #region SquaresResolver
         [TestMethod]
         [TestCategory("SquaresResolver")]
@@ -584,6 +583,31 @@ namespace Emceelee.Advent.Tests
             Assert.AreEqual("01342", result[3]);
             Assert.AreEqual("01423", result[4]);
 
+        }
+        #endregion
+
+        #region OddsResolver
+        [TestMethod]
+        [TestCategory("OddsResolver")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void OddsResolver_ResolveOdds_ArgumentOutOfRange()
+        {
+            var resolver = new OddsResolver();
+            resolver.ResolveOdds(0);
+        }
+
+        [TestMethod]
+        [TestCategory("OddsResolver")]
+        public void OddsResolver_ResolveOdds_Odds()
+        {
+            var resolver = new OddsResolver();
+            var result = resolver.ResolveOdds(5);
+
+            Assert.IsTrue(result.Contains(1));
+            Assert.IsTrue(!result.Contains(2));
+            Assert.IsTrue(result.Contains(3));
+            Assert.IsTrue(!result.Contains(4));
+            Assert.IsTrue(result.Contains(5));
         }
         #endregion
     }

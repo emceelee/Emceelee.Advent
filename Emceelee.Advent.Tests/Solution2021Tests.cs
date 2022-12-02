@@ -8,11 +8,11 @@ using Emceelee.Advent.Solutions;
 namespace Emceelee.Advent.Tests
 {
     [TestClass]
-    public class SolutionTests
+    public class Solution2021Tests
     {
         [TestMethod]
-        [TestCategory("Solution_00_5")]
-        public void Solution_00_5_Iteration1()
+        [TestCategory("Solution21_00_5")]
+        public void Solution21_00_5_Iteration1()
         {
             var solution = new Solution21_00_5();
 
@@ -22,8 +22,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_00_5")]
-        public void Solution_00_5_Iteration10()
+        [TestCategory("Solution21_00_5")]
+        public void Solution21_00_5_Iteration10()
         {
             var solution = new Solution21_00_5();
 
@@ -33,8 +33,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_01")]
-        public void Solution_01_PrimesUpTo30()
+        [TestCategory("Solution21_01")]
+        public void Solution21_01_PrimesUpTo30()
         {
             var solution = new Solution21_01();
 
@@ -43,8 +43,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_03")]
-        public void Solution_03_PalindromePrimesUpTo50()
+        [TestCategory("Solution21_03")]
+        public void Solution21_03_PalindromePrimesUpTo50()
         {
             var solution = new Solution21_03();
 
@@ -53,8 +53,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_04")]
-        public void Solution_04_HELLO()
+        [TestCategory("Solution21_04")]
+        public void Solution21_04_HELLO()
         {
             var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var instructions = new List<string>();
@@ -76,9 +76,9 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_04")]
+        [TestCategory("Solution21_04")]
         [ExpectedException(typeof(ArgumentException))]
-        public void Solution_04_MissingParen()
+        public void Solution21_04_MissingParen()
         {
             var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var instructions = new List<string>();
@@ -90,9 +90,9 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_04")]
+        [TestCategory("Solution21_04")]
         [ExpectedException(typeof(ArgumentException))]
-        public void Solution_04_InvalidAction()
+        public void Solution21_04_InvalidAction()
         {
             var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var instructions = new List<string>();
@@ -104,9 +104,9 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_04")]
+        [TestCategory("Solution21_04")]
         [ExpectedException(typeof(ArgumentException))]
-        public void Solution_04_InvalidValue()
+        public void Solution21_04_InvalidValue()
         {
             var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var instructions = new List<string>();
@@ -118,9 +118,9 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_04")]
+        [TestCategory("Solution21_04")]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Solution_04_OutOfBounds()
+        public void Solution21_04_OutOfBounds()
         {
             var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var instructions = new List<string>();
@@ -132,9 +132,9 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_04")]
+        [TestCategory("Solution21_04")]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Solution_04_OutOfBoundsRead()
+        public void Solution21_04_OutOfBoundsRead()
         {
             var memory = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var instructions = new List<string>();
@@ -146,8 +146,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_05")]
-        public void Solution_05_Decryption()
+        [TestCategory("Solution21_05")]
+        public void Solution21_05_Decryption()
         {
             var encrypted = "TRXMJZJONXHPSSRBX2IXRGAXOJB2VXHRMMVXE MCNOH2N";
             var solution = new Solution21_05();
@@ -158,9 +158,9 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_05")]
+        [TestCategory("Solution21_05")]
         [ExpectedException(typeof(ArgumentException))]
-        public void Solution_05_DifferentAlphabetLengths()
+        public void Solution21_05_DifferentAlphabetLengths()
         {
             var encrypted = "ABC";
             var solution = new Solution21_05();
@@ -169,9 +169,9 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_05")]
+        [TestCategory("Solution21_05")]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Solution_05_CharacterMissingInAlphabet()
+        public void Solution21_05_CharacterMissingInAlphabet()
         {
             var encrypted = "D";
             var solution = new Solution21_05();
@@ -180,8 +180,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_06")]
-        public void Solution_06_Over30()
+        [TestCategory("Solution21_06")]
+        public void Solution21_06_Over30()
         {
             var solution = new Solution21_06();
 
@@ -191,8 +191,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_09")]
-        public void Solution_09_wow()
+        [TestCategory("Solution21_09")]
+        public void Solution21_09_wow()
         {
             var text = "408 329 759 49 973 975 969 343 270 127 103";
             var solution = new Solution21_09();
@@ -203,8 +203,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_10")]
-        public void Solution_10_example()
+        [TestCategory("Solution21_10")]
+        public void Solution21_10_example()
         {
             var lines = new List<string>()
             {
@@ -227,8 +227,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_11")]
-        public void Solution_11_First10()
+        [TestCategory("Solution21_11")]
+        public void Solution21_11_First10()
         {
             var solution = new Solution21_11();
 
@@ -238,8 +238,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_12")]
-        public void Solution_12_TedJones98()
+        [TestCategory("Solution21_12")]
+        public void Solution21_12_TedJones98()
         {
             var solution = new Solution21_12();
 
@@ -257,8 +257,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_13")]
-        public void Solution_13_Blitzen()
+        [TestCategory("Solution21_13")]
+        public void Solution21_13_Blitzen()
         {
             var solution = new Solution21_13();
 
@@ -271,8 +271,8 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_17")]
-        public void Solution_17_3Digits()
+        [TestCategory("Solution21_17")]
+        public void Solution21_17_3Digits()
         {
             var solution = new Solution21_17();
 
@@ -282,9 +282,9 @@ namespace Emceelee.Advent.Tests
         }
 
         [TestMethod]
-        [TestCategory("Solution_17")]
+        [TestCategory("Solution21_17")]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Solution_17_ArgumentOutOfRangeException()
+        public void Solution21_17_ArgumentOutOfRangeException()
         {
             var solution = new Solution21_17();
 

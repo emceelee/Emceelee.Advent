@@ -13,7 +13,7 @@ namespace Emceelee.Advent.Solutions
         {
             var resolver = new PermutationResolver();
             var permutations = resolver.ResolvePermutations("264091").ToList();
-            Console.WriteLine("Day 17 Solution: " + permutations[233-1]);
+            Console.WriteLine("Day 21 Solution: " + permutations[233-1]);
         }
     }
 }
