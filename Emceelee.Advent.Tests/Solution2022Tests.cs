@@ -38,5 +38,15 @@ namespace Emceelee.Advent.Tests
 
             Assert.AreEqual(10, result);
         }
+
+        [TestMethod]
+        [TestCategory("Solution22_04")]
+        public void Solution22_04_Minus16()
+        {
+            var solution = new Solution22_04();
+            var result = solution.Solve(Solution22_04.ExampleText);
+
+            Assert.AreEqual(-16, result);
+        }
     }
 }
