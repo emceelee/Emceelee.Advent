@@ -9,8 +9,8 @@ namespace Emceelee.Advent.Solutions
     {
         public void Solve()
         {
-            var garbledText = Utility.ReadAllText("DataSet\\13_garbled.txt");
-            var errorSequence = Utility.ReadLines("DataSet\\13_sequence.txt")
+            var garbledText = Utility.ReadAllText("DataSet\\2021\\13_garbled.txt");
+            var errorSequence = Utility.ReadLines("DataSet\\2021\\13_sequence.txt")
                 .Select(line => int.Parse(line.Replace(",", string.Empty)));
             Console.WriteLine("Day 13 Solution: " + Solve(garbledText, errorSequence));
         }

@@ -635,5 +635,67 @@ namespace Emceelee.Advent.Tests
             Assert.IsTrue(!result.Contains(5));
         }
         #endregion
+
+        #region ElevatorFloorResolver
+        [TestMethod]
+        [TestCategory("ElevatorFloorResolver")]
+        public void ElevatorFloorResolver_ResolveFloor_2_1()
+        {
+            var resolver = new ElevatorFloorResolver();
+            var result = resolver.ResolveFloor(ElevatorFloorResolver.ExampleInstruction2_1);
+
+            Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
+        [TestCategory("ElevatorFloorResolver")]
+        public void ElevatorFloorResolver_ResolveFloor_2_2()
+        {
+            var resolver = new ElevatorFloorResolver();
+            var result = resolver.ResolveFloor(ElevatorFloorResolver.ExampleInstruction2_2);
+
+            Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
+        [TestCategory("ElevatorFloorResolver")]
+        public void ElevatorFloorResolver_ResolveFloor_0_1()
+        {
+            var resolver = new ElevatorFloorResolver();
+            var result = resolver.ResolveFloor(ElevatorFloorResolver.ExampleInstruction0_1);
+
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        [TestCategory("ElevatorFloorResolver")]
+        public void ElevatorFloorResolver_ResolveFloor_0_2()
+        {
+            var resolver = new ElevatorFloorResolver();
+            var result = resolver.ResolveFloor(ElevatorFloorResolver.ExampleInstruction0_2);
+
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        [TestCategory("ElevatorFloorResolver")]
+        public void ElevatorFloorResolver_ResolveFloor_0_3()
+        {
+            var resolver = new ElevatorFloorResolver();
+            var result = resolver.ResolveFloor(ElevatorFloorResolver.ExampleInstruction0_3);
+
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        [TestCategory("ElevatorFloorResolver")]
+        public void ElevatorFloorResolver_ResolveFloor_1_1()
+        {
+            var resolver = new ElevatorFloorResolver();
+            var result = resolver.ResolveFloor(ElevatorFloorResolver.ExampleInstruction1_1);
+
+            Assert.AreEqual(1, result);
+        }
+        #endregion
     }
 }

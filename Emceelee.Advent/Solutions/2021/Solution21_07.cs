@@ -10,7 +10,7 @@ namespace Emceelee.Advent.Solutions
     {
         public void Solve()
         {
-            var text = Utility.ReadAllText("DataSet\\07_data.txt");
+            var text = Utility.ReadAllText("DataSet\\2021\\07_data.txt");
             var resolver = new SetCountResolver();
 
             var result = resolver.ResolveSetCounts(text, 3);

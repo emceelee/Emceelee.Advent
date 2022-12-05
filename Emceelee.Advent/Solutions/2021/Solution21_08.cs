@@ -11,7 +11,7 @@ namespace Emceelee.Advent.Solutions
     {
         public void Solve()
         {
-            var lines = Utility.ReadLines("DataSet\\08_map.txt");
+            var lines = Utility.ReadLines("DataSet\\2021\\08_map.txt");
             var resolver = new CollisionResolver();
 
             var trajectories = new List<int[]>()

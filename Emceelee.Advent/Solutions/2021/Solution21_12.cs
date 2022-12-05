@@ -9,7 +9,7 @@ namespace Emceelee.Advent.Solutions
     {
         public void Solve()
         {
-            var lines = Utility.ReadLines("DataSet\\12_data.txt");
+            var lines = Utility.ReadLines("DataSet\\2021\\12_data.txt");
             Console.WriteLine("Day 12 Solution: " + Solve(lines));
         }
 

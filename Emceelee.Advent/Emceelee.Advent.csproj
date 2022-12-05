@@ -10,31 +10,34 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="DataSet\03_memory.txt">
+    <None Update="DataSet\2021\03_memory.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="DataSet\03_program.txt">
+    <None Update="DataSet\2021\03_program.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="DataSet\07_data.txt">
+    <None Update="DataSet\2021\07_data.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="DataSet\08_map.txt">
+    <None Update="DataSet\2021\08_map.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="DataSet\10_nodes.txt">
+    <None Update="DataSet\2021\10_nodes.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="DataSet\12_data.txt">
+    <None Update="DataSet\2021\12_data.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="DataSet\13_garbled.txt">
+    <None Update="DataSet\2021\13_garbled.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="DataSet\13_sequence.txt">
+    <None Update="DataSet\2021\13_sequence.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="DataSet\19_network.txt">
+    <None Update="DataSet\2021\19_network.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="DataSet\2022\05_codes.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

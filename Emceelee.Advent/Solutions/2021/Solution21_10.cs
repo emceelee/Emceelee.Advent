@@ -11,7 +11,7 @@ namespace Emceelee.Advent.Solutions
     {
         public void Solve()
         {
-            var lines = Utility.ReadLines("DataSet\\10_nodes.txt");
+            var lines = Utility.ReadLines("DataSet\\2021\\10_nodes.txt");
             Console.WriteLine("Day 10 Solution: " + Solve(lines));
         }
 

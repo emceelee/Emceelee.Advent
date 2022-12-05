@@ -17,8 +17,8 @@ namespace Emceelee.Advent.Solutions
 
         public void Solve()
         {
-            var memory = Utility.ReadAllText("DataSet\\03_memory.txt");
-            var instructions = Utility.ReadLines("DataSet\\03_program.txt");
+            var memory = Utility.ReadAllText("DataSet\\2021\\03_memory.txt");
+            var instructions = Utility.ReadLines("DataSet\\2021\\03_program.txt");
 
             Console.WriteLine("Day 04 Solution: " + Solve(memory, instructions));
         }
