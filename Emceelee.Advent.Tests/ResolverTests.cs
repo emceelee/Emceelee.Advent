@@ -697,5 +697,57 @@ namespace Emceelee.Advent.Tests
             Assert.AreEqual(1, result);
         }
         #endregion
+
+        #region MartianResolver
+        [TestMethod]
+        [TestCategory("MartianResolver")]
+        public void MartianResolver_IsMartian_Mark_Phillips()
+        {
+            var resolver = new MartianResolver();
+            var name = "Mark Phillips";
+
+            var result = resolver.IsMartian(name);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [TestCategory("MartianResolver")]
+        public void MartianResolver_IsMartian_Jason_Marshall()
+        {
+            var resolver = new MartianResolver();
+            var name = "Jason Marshall";
+
+            var result = resolver.IsMartian(name);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        [TestCategory("MartianResolver")]
+        public void MartianResolver_IsMartian_Elon_Musk()
+        {
+            var resolver = new MartianResolver();
+            var name = "Elon Musk";
+
+            var result = resolver.IsMartian(name);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        [TestCategory("MartianResolver")]
+        public void MartianResolver_ResolveMartians_MARS_Permutations()
+        {
+            var resolver = new MartianResolver();
+            var name = "MARS";
+            var names = Utility.GetPermutations(name);
+
+            var result = resolver.ResolveMartians(names);
+
+            Assert.AreEqual(1, result.Count());
+            Assert.AreEqual(name, result.First());
+        }
+        #endregion
     }
 }
