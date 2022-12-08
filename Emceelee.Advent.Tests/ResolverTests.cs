@@ -749,5 +749,98 @@ namespace Emceelee.Advent.Tests
             Assert.AreEqual(name, result.First());
         }
         #endregion
+
+        #region PassphraseResolver
+        [TestMethod]
+        [TestCategory("PassphraseResolver")]
+        public void PassphraseResolver_IsValidPassphrase_Short()
+        {
+            var resolver = new PassphraseResolver();
+            var passphrase = "santa";
+
+            var result = resolver.IsValidPassphrase(passphrase);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        [TestCategory("PassphraseResolver")]
+        public void PassphraseResolver_IsValidPassphrase_Valid1()
+        {
+            var resolver = new PassphraseResolver();
+            var passphrase = "santa rudolf cupid";
+
+            var result = resolver.IsValidPassphrase(passphrase);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [TestCategory("PassphraseResolver")]
+        public void PassphraseResolver_IsValidPassphrase_Duplicated()
+        {
+            var resolver = new PassphraseResolver();
+            var passphrase = "santa rudolf santa cupid";
+
+            var result = resolver.IsValidPassphrase(passphrase);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        [TestCategory("PassphraseResolver")]
+        public void PassphraseResolver_IsValidPassphrase_InvalidChars()
+        {
+            var resolver = new PassphraseResolver();
+            var passphrase = "santa spending some$$$";
+
+            var result = resolver.IsValidPassphrase(passphrase);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        [TestCategory("PassphraseResolver")]
+        public void PassphraseResolver_IsValidPassphrase_Valid2()
+        {
+            var resolver = new PassphraseResolver();
+            var passphrase = "cupid rudolf cupids";
+
+            var result = resolver.IsValidPassphrase(passphrase);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [TestCategory("PassphraseResolver")]
+        public void PassphraseResolver_IsValidPassphrase_Long()
+        {
+            var resolver = new PassphraseResolver();
+            var passphrase = "dasher dancer prancer vixen comet cupid donner blitzen rudolph";
+
+            var result = resolver.IsValidPassphrase(passphrase);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        [TestCategory("PassphraseResolver")]
+        public void PassphraseResolver_ResolveValidPassphrases()
+        {
+            var resolver = new PassphraseResolver();
+            var passphrase1 = "santa rudolf cupid";
+            var passphrase2 = "cupid rudolf cupids";
+            var passphrase3 = "dasher dancer prancer vixen comet cupid donner blitzen rudolph";
+
+            var passphrases = new List<string>() { passphrase1, passphrase2, passphrase3 };
+
+            var result = resolver.ResolveValidPassphrases(passphrases);
+            var list = result.ToList();
+
+            Assert.AreEqual(2, list.Count());
+            Assert.AreEqual(passphrase1, list[0]);
+            Assert.AreEqual(passphrase2, list[1]);
+        }
+        #endregion
     }
 }
