@@ -86,6 +86,7 @@ namespace Emceelee.Advent.Solutions
             var englishWords = scrubbed.Split(englishSplitters, StringSplitOptions.RemoveEmptyEntries);
             var englishWordsTrimmed = englishWords.Select(x => x.Trim().ToLower()).Where(x => !string.IsNullOrWhiteSpace(x));
 
+            //check for special characters which my throw off the word counts
             var specialCharWords = englishWordsTrimmed.Where(x => !Regex.IsMatch(x, "^[a-z0-9]*$"));
 
             return englishWordsTrimmed;
