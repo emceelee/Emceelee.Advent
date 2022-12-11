@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Emceelee.Advent.Forms
 {
-    public partial class Solution_16 : Form
+    public partial class Solution21_16 : Form
     {
         private enum RGB
         {
@@ -21,7 +21,7 @@ namespace Emceelee.Advent.Forms
 
         private HashSet<int> Primes { get; set; }
 
-        public Solution_16()
+        public Solution21_16()
         {
             InitializeComponent();
 

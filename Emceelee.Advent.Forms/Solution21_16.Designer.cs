@@ -1,6 +1,6 @@
 ﻿namespace Emceelee.Advent.Forms
 {
-    partial class Solution_16
+    partial class Solution21_16
     {
         /// <summary>
         /// Required designer variable.

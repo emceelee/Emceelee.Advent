@@ -46,16 +46,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PrimeResolver.cs" />
-    <Compile Include="Solution_16.cs">
+    <Compile Include="Solution21_16.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Solution_16.Designer.cs">
-      <DependentUpon>Solution_16.cs</DependentUpon>
+    <Compile Include="Solution21_16.Designer.cs">
+      <DependentUpon>Solution21_16.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Solution_16.resx">
-      <DependentUpon>Solution_16.cs</DependentUpon>
+    <Compile Include="Solution22_11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Solution22_11.Designer.cs">
+      <DependentUpon>Solution22_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="Solution21_16.resx">
+      <DependentUpon>Solution21_16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +73,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Solution22_11.resx">
+      <DependentUpon>Solution22_11.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="16_coded.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSet\2022\11_vectors.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
