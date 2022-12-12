@@ -842,5 +842,43 @@ namespace Emceelee.Advent.Tests
             Assert.AreEqual(passphrase2, list[1]);
         }
         #endregion
+
+        #region KeypadCodeResolver
+        [TestMethod]
+        [TestCategory("KeypadCodeResolver")]
+        public void KeypadCodeResolver_ResolveKeypadCode()
+        {
+            var resolver = new KeypadCodeResolver();
+            var instruction1 = "on 3x2";
+            var instruction2 = "rotate column x=2 by 1";
+            var instruction3 = " rotate row y=0 by 6";
+
+            var x = 7;
+            var y = 3;
+
+            var instructions = new List<string>() { instruction1, instruction2, instruction3 };
+
+            var result = resolver.ResolveKeypadCode(x, y, instructions);
+
+            var expected = new bool[7, 3]
+            {
+                { true, true, false },
+                { false, true, false },
+                { false, true, true },
+                { false, false, false },
+                { false, false, false },
+                { false, false, false },
+                { true, false, false },
+            };
+
+            for (int i = 0; i < x; ++i)
+            {
+                for (int j = 0; j < y; ++j)
+                {
+                    Assert.AreEqual(expected[i, j], result[i,j]);
+                }
+            }
+        }
+        #endregion
     }
 }
