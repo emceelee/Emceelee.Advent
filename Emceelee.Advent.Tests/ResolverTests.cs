@@ -880,5 +880,98 @@ namespace Emceelee.Advent.Tests
             }
         }
         #endregion
+        [TestMethod]
+        [TestCategory("RobotGameResolver")]
+        public void RobotGameResolver_GetNext_1()
+        {
+            var resolver = new RobotGameResolver();
+            var result = resolver.GetNext("1");
+
+            Assert.AreEqual("11", result);
+        }
+
+        [TestMethod]
+        [TestCategory("RobotGameResolver")]
+        public void RobotGameResolver_GetNext_11()
+        {
+            var resolver = new RobotGameResolver();
+            var result = resolver.GetNext("11");
+
+            Assert.AreEqual("21", result);
+        }
+
+        [TestMethod]
+        [TestCategory("RobotGameResolver")]
+        public void RobotGameResolver_GetNext_21()
+        {
+            var resolver = new RobotGameResolver();
+            var result = resolver.GetNext("21");
+
+            Assert.AreEqual("1211", result);
+        }
+
+        [TestMethod]
+        [TestCategory("RobotGameResolver")]
+        public void RobotGameResolver_GetNext_1211()
+        {
+            var resolver = new RobotGameResolver();
+            var result = resolver.GetNext("1211");
+
+            Assert.AreEqual("111221", result);
+        }
+
+        [TestMethod]
+        [TestCategory("RobotGameResolver")]
+        public void RobotGameResolver_GetNext_111221()
+        {
+            var resolver = new RobotGameResolver();
+            var result = resolver.GetNext("111221");
+
+            Assert.AreEqual("312211", result);
+        }
+
+        [TestMethod]
+        [TestCategory("RobotGameResolver")]
+        public void RobotGameResolver_GetSeconds_1Round()
+        {
+            var resolver = new RobotGameResolver();
+            var seconds = resolver.ResolveSeconds(1, out string result);
+
+            Assert.AreEqual(2, seconds);
+            Assert.AreEqual("1", result);
+        }
+
+        [TestMethod]
+        [TestCategory("RobotGameResolver")]
+        public void RobotGameResolver_GetSeconds_2Rounds()
+        {
+            var resolver = new RobotGameResolver();
+            var seconds = resolver.ResolveSeconds(2, out string result);
+
+            Assert.AreEqual(11, seconds);
+            Assert.AreEqual("11", result);
+        }
+
+        [TestMethod]
+        [TestCategory("RobotGameResolver")]
+        public void RobotGameResolver_GetSeconds_3Rounds()
+        {
+            var resolver = new RobotGameResolver();
+            var seconds = resolver.ResolveSeconds(3, out string result);
+
+            Assert.AreEqual(20, seconds);
+            Assert.AreEqual("21", result);
+        }
+
+        [TestMethod]
+        [TestCategory("RobotGameResolver")]
+        public void RobotGameResolver_GetSeconds_4Rounds()
+        {
+            var resolver = new RobotGameResolver();
+            var seconds = resolver.ResolveSeconds(4, out string result);
+
+            Assert.AreEqual(33, seconds);
+            Assert.AreEqual("1211", result);
+        }
     }
 }
