@@ -317,7 +317,7 @@ namespace Emceelee.Advent.Tests
             var result = resolver.ResolveCollisions(lines, 1, 1);
         }
         #endregion
-        
+
         #region SquaresResolver
         [TestMethod]
         [TestCategory("SquaresResolver")]
@@ -875,11 +875,13 @@ namespace Emceelee.Advent.Tests
             {
                 for (int j = 0; j < y; ++j)
                 {
-                    Assert.AreEqual(expected[i, j], result[i,j]);
+                    Assert.AreEqual(expected[i, j], result[i, j]);
                 }
             }
         }
         #endregion
+
+        #region RobotGameResolver
         [TestMethod]
         [TestCategory("RobotGameResolver")]
         public void RobotGameResolver_GetNext_1()
@@ -973,5 +975,108 @@ namespace Emceelee.Advent.Tests
             Assert.AreEqual(33, seconds);
             Assert.AreEqual("1211", result);
         }
+        #endregion
+
+        #region BinarySpacePartitionResolver
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_FBFBBFF()
+        {
+            var resolver = new BinarySpacePartitionResolver('F', 'B');
+            var result = resolver.ResolveIndex("FBFBBFF");
+
+            Assert.AreEqual(44, result);
+        }
+
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_FFFBBFF()
+        {
+            var resolver = new BinarySpacePartitionResolver('F', 'B');
+            var result = resolver.ResolveIndex("FFFBBFF");
+
+            Assert.AreEqual(12, result);
+        }
+
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_FBBFFBF()
+        {
+            var resolver = new BinarySpacePartitionResolver('F', 'B');
+            var result = resolver.ResolveIndex("FBBFFBF");
+
+            Assert.AreEqual(50, result);
+        }
+
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_BBFFBBF()
+        {
+            var resolver = new BinarySpacePartitionResolver('F', 'B');
+            var result = resolver.ResolveIndex("BBFFBBF");
+
+            Assert.AreEqual(102, result);
+        }
+
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_BFFBBFB()
+        {
+            var resolver = new BinarySpacePartitionResolver('F', 'B');
+            var result = resolver.ResolveIndex("BFFBBFB");
+
+            Assert.AreEqual(77, result);
+        }
+
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_RLR()
+        {
+            var resolver = new BinarySpacePartitionResolver('L', 'R');
+            var result = resolver.ResolveIndex("RLR");
+
+            Assert.AreEqual(5, result);
+        }
+
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_LLL()
+        {
+            var resolver = new BinarySpacePartitionResolver('L', 'R');
+            var result = resolver.ResolveIndex("LLL");
+
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_RRR()
+        {
+            var resolver = new BinarySpacePartitionResolver('L', 'R');
+            var result = resolver.ResolveIndex("RRR");
+
+            Assert.AreEqual(7, result);
+        }
+
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_RLL()
+        {
+            var resolver = new BinarySpacePartitionResolver('L', 'R');
+            var result = resolver.ResolveIndex("RLL");
+
+            Assert.AreEqual(4, result);
+        }
+
+        [TestMethod]
+        [TestCategory("BinarySpacePartitionResolver")]
+        public void BinarySpacePartitionResolver_ResolveIndex_LRR()
+        {
+            var resolver = new BinarySpacePartitionResolver('L', 'R');
+            var result = resolver.ResolveIndex("LRR");
+
+            Assert.AreEqual(3, result);
+        }
+        #endregion
     }
 }
