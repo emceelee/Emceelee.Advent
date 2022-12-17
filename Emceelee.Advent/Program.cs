@@ -42,7 +42,8 @@ namespace Emceelee.Advent
             //solution = new Solution22_10();
             //solution = new Solution22_12();
             //solution = new Solution22_14();
-            solution = new Solution22_15();
+            //solution = new Solution22_15();
+            solution = new Solution22_16();
             #endregion
             solution.Solve();
 
