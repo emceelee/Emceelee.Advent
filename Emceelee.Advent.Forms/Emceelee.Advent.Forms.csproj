@@ -60,6 +60,12 @@
     <Compile Include="Solution22_11.Designer.cs">
       <DependentUpon>Solution22_11.cs</DependentUpon>
     </Compile>
+    <Compile Include="Solution22_17.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Solution22_17.Designer.cs">
+      <DependentUpon>Solution22_17.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility.cs" />
     <EmbeddedResource Include="Solution21_16.resx">
       <DependentUpon>Solution21_16.cs</DependentUpon>
@@ -75,6 +81,9 @@
     </Compile>
     <EmbeddedResource Include="Solution22_11.resx">
       <DependentUpon>Solution22_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solution22_17.resx">
+      <DependentUpon>Solution22_17.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -94,6 +103,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataSet\2022\11_vectors.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSet\2022\17_IceData.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

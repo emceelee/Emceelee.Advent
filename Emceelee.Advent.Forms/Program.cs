@@ -17,7 +17,8 @@ namespace Emceelee.Advent.Forms
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Solution21_16());
-            Application.Run(new Solution22_11());
+            //Application.Run(new Solution22_11());
+            Application.Run(new Solution22_17());
         }
     }
 }
