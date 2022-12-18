@@ -58,6 +58,13 @@
     <None Update="DataSet\2022\15_tickets.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="DataSet\2022\18_big.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Transforms\2022.18\" />
   </ItemGroup>
 
 </Project>

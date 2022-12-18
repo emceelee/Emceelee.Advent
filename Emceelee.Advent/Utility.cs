@@ -68,5 +68,20 @@ namespace Emceelee.Advent
             return result;
         }
         
+        public static int Count<T>(T[,] map, T search)
+        {
+            int count = 0;
+            for(int x = 0; x < map.GetLength(0); ++x)
+            {
+                for (int y = 0; y < map.GetLength(0); ++y)
+                {
+                    if(map[x,y].Equals(search))
+                    {
+                        ++count;
+                    }
+                }
+            }
+            return count;
+        }
     }
 }
